@@ -21,7 +21,7 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "http://t.weather.sojson.com/api/weather/city/" + city
   res = requests.get(url).json()
-  weather = res['forecast'][0]
+  weather = res['data']['forecast'][0]
   return weather['type'], weather['high'],weather['low'],weather['notice']
 
 def get_count():
